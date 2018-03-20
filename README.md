@@ -1,38 +1,27 @@
-[![npm version](https://badge.fury.io/js/ionic-angular.svg)](https://badge.fury.io/js/ionic-angular)
-[![Circle CI](https://circleci.com/gh/ionic-team/ionic.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/ionic-team/ionic)
-[![Open Source Helpers](https://www.codetriage.com/ionic-team/ionic/badges/users.svg)](https://www.codetriage.com/ionic-team/ionic)
+## Ionic Framework
 
-# Ionic
+The official npm package for [Ionic](https://ionicframework.com/), complete with pre-built ES5 bundles, TypeScript definitions, Sass files, CommonJS ES5 files, and more.
 
-[Ionic](https://ionicframework.com/) is the open-source mobile app development framework that makes it easy to
-build top quality native and progressive web apps with web technologies.
+To get started with Ionic, please read the [Installation Guide](https://ionicframework.com/docs/intro/installation/).
 
-Ionic is based on [Angular](https://angular.io/) and comes with many significant performance, usability, and
-feature improvements over the past versions.
+[Ionic Documentation](https://ionicframework.com/docs/)
 
-See the [Building Apps with Ionic](https://adamdbradley.github.io/building-with-ionic2) slides for a quick
-overview or watch our [Crash Course](https://youtu.be/O2WiI9QrS5s) video for a quick walkthrough on how to get
-started using Ionic.
+### Source files
 
-### Getting Started
+In the root of the package are ES5 sources in the CommonJS module format, their associated Typescript type definition files, and the Ionic Sass entry files. The Javascript sources are meant to be used by a bundler such as Webpack, SystemJS Builder, or Browserify. The type definitions provide support to Typescript tooling for things like type checking and code completion.
 
-Start a new project by following our quick [Getting Started guide](https://ionicframework.com/getting-started/).
-We would love to hear from you! If you have any feedback or run into issues using our framework, please file
-an [issue](https://github.com/ionic-team/ionic/issues/new) on this repository.
+Usually, the only import required by the user is `ionic-angular`, as everything from Ionic is exported by the package:
 
-### Contributing
+```
+  import { App, NavController } from 'ionic-angular';
+```
 
-Thanks for your interest in contributing! Read up on our guidelines for
-[contributing](https://github.com/ionic-team/ionic/blob/master/.github/CONTRIBUTING.md)
-and then look through our issues with a [help wanted](https://github.com/ionic-team/ionic/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22)
-label.
+### Bundles
 
-### Examples
+Minified and unminified CommonJS and System.register module format bundles, as well as compiled CSS stylesheets for both Ionic iOS and Material Design are located `bundles/`. The SystemJS bundle is  primarily meant to be included in a `<script>` tag for demos, tests and Javascript playgrounds like [Plunker](https://plnkr.co/).
 
-The [Ionic Conference App](https://github.com/ionic-team/ionic-conference-app) is a full featured Ionic app.
-It is the perfect starting point for learning and building your own app.
+### Installation and More
 
-### Ionic V1
+To use Ionic, we recommend installing and utilizing the [Ionic CLI](https://ionicframework.com/docs/intro/installation/) which will help you create pre-configured Ionic apps.
 
-The source code for Ionic V1 has been moved to [ionic-team/ionic-v1](https://github.com/ionic-team/ionic-v1).
-Please open any issues and pull requests related to Ionic V1 on that repository.
+For full instructions on using Ionic, please visit the [Ionic Documentation](https://ionicframework.com/docs/)
