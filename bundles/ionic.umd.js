@@ -40558,12 +40558,17 @@ function setControlCss(element, control) {
     if (!control) {
         return;
     }
-    element.setElementClass('ng-untouched', control.untouched);
-    element.setElementClass('ng-touched', control.touched);
-    element.setElementClass('ng-pristine', control.pristine);
-    element.setElementClass('ng-dirty', control.dirty);
-    element.setElementClass('ng-valid', control.valid);
-    element.setElementClass('ng-invalid', !control.valid);
+    // making sure the element gets updated in the next tick
+    // https://github.com/ionic-team/ionic/issues/12503
+    // https://github.com/angular/angular/issues/14189
+    setTimeout(function () {
+        element.setElementClass('ng-untouched', control.untouched);
+        element.setElementClass('ng-touched', control.touched);
+        element.setElementClass('ng-pristine', control.pristine);
+        element.setElementClass('ng-dirty', control.dirty);
+        element.setElementClass('ng-valid', control.valid);
+        element.setElementClass('ng-invalid', !control.valid);
+    });
 }
 
 var __extends$41 = (undefined && undefined.__extends) || (function () {
